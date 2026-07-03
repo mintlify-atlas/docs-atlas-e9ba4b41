@@ -4,14 +4,14 @@ sidebarTitle: "Python"
 description: "How Codely Dark colors Python code — decorators, docstrings, self parameters, f-strings, type hints, and pip module names, all with distinct hues."
 ---
 
-Codely Dark ships with first-class Python support, covering the full range of Python-specific TextMate grammar scopes. Docstrings are rendered in a warm muted tone to visually separate documentation from executable code. Decorators and class methods receive a vivid coral red, `self` and language-special parameters are colored in a soft pink-mauve, f-string placeholders get their own accent, and built-in type annotations are styled distinctly so they never blend into surrounding identifiers. Pip package names in `requirements.txt` files are highlighted too, giving dependency files the same visual clarity as source code.
+Codely Dark ships with first-class Python support, covering the full range of Python-specific TextMate grammar scopes. Docstrings are rendered in a warm muted tone to visually separate documentation from executable code. Decorators are styled in italic to set them apart from regular identifiers, `self` and language-special parameters are rendered in coral red italic, and class methods use sage green. F-string placeholders get their own amber accent, and built-in type annotations are styled distinctly so they never blend into surrounding identifiers. Pip package names in `requirements.txt` files are highlighted too, giving dependency files the same visual clarity as source code.
 
 ## Token Color Reference
 
 | Token | Color | Style | Scope |
 |---|---|---|---|
 | Python docstrings | `#a89984` | italic | `string.quoted.docstring.multi.python` |
-| Python decorators | `#fb5245` | italic | `entity.name.function.decorator.python`, `punctuation.definition.decorator.python` |
+| Python decorators | — | italic | `entity.name.function.decorator.python` |
 | `self` parameter | `#fb5245` | italic | `variable.parameter.function.language.special.self.python`, `variable.language.special.self.python` |
 | Python class methods | `#8ec07c` | — | `source.python entity.name.function` |
 | Python logical operators | `#fb5245` | italic | `source.python keyword.operator.logical.python` |
@@ -26,8 +26,8 @@ Codely Dark ships with first-class Python support, covering the full range of Py
 ## Preview
 
 ```python
-from dataclasses import dataclass
-from pathlib import Path
+from dataclasses import dataclass, field
+from typing import List
 
 
 @dataclass
@@ -36,6 +36,7 @@ class VideoLesson:
 
     title: str
     duration: int  # seconds
+    tags: List[str] = field(default_factory=list)
     published: bool = False
 
     def url_slug(self) -> str:

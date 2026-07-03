@@ -33,9 +33,9 @@ Accent colors carry semantic meaning and are applied consistently across both sy
 
 | Color Name | Hex | Primary Use |
 |---|---|---|
-| Yellow-green | `#b8bb26` | Active tab indicator border, Activity Bar active icon, status bar remote item, panel title border, input active border |
-| Red | `#fb5245` | Keywords, storage modifiers, HTML tags, functions, CSS selectors, error markers |
-| Teal | `#8ec07c` | Operators, strings, Class/Support types, HTML punctuation, Python class methods |
+| Yellow-green | `#b8bb26` | Strings, active tab indicator border, Activity Bar active icon, status bar remote item, panel title border, input active border |
+| Red | `#fb5245` | Keywords, storage modifiers, HTML tags, CSS selectors, error markers |
+| Teal | `#8ec07c` | Operators, Class/Support types, HTML punctuation, Python class methods |
 | Gold / amber | `#fac149` | Numbers, constants, JS support classes, JSON keys, Python data types |
 | Purple / pink | `#d3869b` | Constants, tag attributes, function parameters, embedded values |
 | Cursor | `#81277e` | Editor cursor foreground |
@@ -43,7 +43,7 @@ Accent colors carry semantic meaning and are applied consistently across both sy
 
 ## Semantic Meaning
 
-Each accent hue carries a consistent semantic role throughout the theme. **Red** (`#fb5245`) signals high-importance tokens that control program flow — keywords, storage modifiers, HTML tags, and function names — as well as error states. **Gold** (`#fac149`) marks numeric and constant values, keeping data literals immediately distinguishable from logic. **Teal** (`#8ec07c`) covers relational tokens like strings and operators, bridging data and logic visually. **Purple/pink** (`#d3869b`) is reserved for symbolic tokens and class hierarchies, including inherited classes and embedded values. **Yellow-green** (`#b8bb26`) acts as a structural indicator in the workbench — it highlights which tab is active, which Activity Bar icon is focused, and which remote connection is live in the status bar.
+Each accent hue carries a consistent semantic role throughout the theme. **Red** (`#fb5245`) signals high-importance tokens that control program flow — keywords, storage modifiers, and HTML tags — as well as error states. **Gold** (`#fac149`) marks numeric and constant values, keeping data literals immediately distinguishable from logic. **Teal** (`#8ec07c`) covers relational tokens like operators and class/support types, bridging data and logic visually. **Purple/pink** (`#d3869b`) is reserved for symbolic tokens and class hierarchies, including inherited classes and embedded values. **Yellow-green** (`#b8bb26`) doubles as both a syntax color for string literals and a structural workbench indicator — it highlights which tab is active, which Activity Bar icon is focused, and which remote connection is live in the status bar.
 
 <Note>
   All background colors have zero transparency. Selection and match highlights use semi-transparent alpha variants to layer gracefully over syntax colors without fully obscuring the token beneath.

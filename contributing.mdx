@@ -1,5 +1,5 @@
 ---
-title: "Contributing to the Codely VS Code Theme"
+title: "Codely VS Code Theme: Contribution Guide and Setup"
 sidebarTitle: "Contributing"
 description: "Learn how to fork, modify, preview, and submit changes to the Codely VS Code Theme — from editing token colors to building and publishing the extension."
 ---
@@ -50,7 +50,7 @@ Before getting started, make sure you have the following installed:
 
 All visual styling for the Codely Dark theme is defined in a single file:
 
-```
+```text
 themes/dark.codely-theme-color-theme.json
 ```
 
@@ -67,7 +67,7 @@ To identify the exact TextMate scope for a token you want to style:
 
 1. In the **Extension Development Host** window, open a source file in the language you want to inspect.
 2. Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).
-3. Run the **Developer: Inspect Editor Tokens and Scopes** command.
+3. Run the **Inspect TM Scopes** command.
 4. Click on any token in the editor — the panel will show all TextMate scopes assigned to that token, from most specific to least specific.
 
 Once you have the scope name, search for it in `themes/dark.codely-theme-color-theme.json`. If a matching rule already exists, update the `foreground` or `fontStyle`. If no rule exists, add a new entry to the `tokenColors` array:
