@@ -1,0 +1,112 @@
+---
+title: "JSON, Markdown, and SQL Highlighting in Codely Theme"
+sidebarTitle: "JSON, Markdown & SQL"
+description: "Codely Dark's token rules for JSON key levels, Markdown headings and formatting, and SQL keywords and table names — with visual previews."
+---
+
+Codely Dark applies thoughtful token rules to three commonly used non-code formats. JSON keys are split into two distinct colors — top-level (level-0) keys use coral italic so the document's primary shape is immediately obvious, while nested keys use Gruvbox amber. Markdown receives a rich set of rules covering headings, bold, italic, blockquotes, links, fenced code blocks, tables, and horizontal separators. SQL keywords are rendered in coral to mirror the theme's general keyword treatment, and table and database identifiers use sage green so names stand out from the surrounding syntax.
+
+## JSON
+
+### Token Color Reference
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| JSON key — level 0 | `#fb5245` | italic | `source.json meta.structure.dictionary.json support.type.property-name.json` |
+| JSON key — nested | `#fac149` | — | `source.json meta.structure.dictionary.json` |
+| JSON values, separators, braces | `#ebdbb2` | — | `source.json meta.structure.dictionary.value.json`, `punctuation.separator.dictionary.pair.json`, `punctuation.definition.dictionary.begin/end.json` |
+
+### Preview
+
+Top-level keys (e.g. `"name"`, `"version"`, `"contributes"`) appear in `#fb5245` italic, while all nested keys (e.g. `"themes"`, `"label"`) use `#fac149`.
+
+```json
+{
+  "name": "codely-theme",
+  "version": "0.0.1",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Codely Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark.codely-theme-color-theme.json"
+      }
+    ]
+  }
+}
+```
+
+---
+
+## Markdown
+
+### Token Color Reference
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| Plain text | `#ebdbb2` | — | `text.html.markdown`, `punctuation.definition.list_item.markdown` |
+| Inline raw / code span | `#c792ea` | — | `text.html.markdown markup.inline.raw.markdown` |
+| Inline raw punctuation (backtick) | `#ebdbb2` | — | `...markup.inline.raw.markdown punctuation.definition.raw.markdown` |
+| Headings (`#`, `##`, …) | `#fb5245` | italic | `markup.heading`, `markup.heading.markdown punctuation.definition.heading.markdown`, `markup.heading.markdown entity.name` |
+| Italic text | `#fb5245` | italic | `markup.italic` |
+| Bold text | `#fb5245` | bold | `markup.bold`, `markup.bold string` |
+| Bold-italic text | `#fb5245` | bold | `markup.bold markup.italic`, `markup.italic markup.bold`, etc. |
+| Underline | `#b8bb26` | underline | `markup.underline` |
+| Blockquote `>` marker | `#65737e` | — | `markup.quote punctuation.definition.blockquote.markdown` |
+| Blockquote body | — | italic | `markup.quote` |
+| Link title text | `#fac149` | — | `string.other.link.title.markdown` |
+| Link description | `#b8bb26` | — | `string.other.link.description.title.markdown` |
+| Link anchor / reference | `#b8bb26` | — | `constant.other.reference.link.markdown` |
+| Raw block | `#c792ea` | — | `markup.raw.block` |
+| Fenced code block variable | `#ebdbb2` | — | `markup.raw.block.fenced.markdown`, `variable.language.fenced.markdown`, `punctuation.section.class.end` |
+| Fenced language identifier | `#65737e` | — | `variable.language.fenced.markdown` |
+| Horizontal separator | `#65737e` | bold | `meta.separator` |
+| Table | `#eeffff` | — | `markup.table` |
+
+### Preview
+
+```markdown
+# Heading 1
+
+This is a **bold** word and an _italic_ phrase.
+
+> A blockquote from CodelyTV.
+
+[Visit CodelyTV](https://codely.tv)
+
+```typescript
+const x: number = 42;
+` ``
+
+| Column A | Column B |
+|----------|----------|
+| Value 1  | Value 2  |
+```
+
+---
+
+## SQL
+
+### Token Color Reference
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| SQL keywords (`SELECT`, `FROM`, `WHERE`, `JOIN`, `GROUP BY`, `ORDER BY`, `LIMIT`, etc.) | `#fb5245` | — | `keyword.other.DML.sql`, `keyword.other.sql`, `keyword.other.alias.sql` |
+| Table and database names | `#8ec07c` | — | `constant.other.table-name.sql`, `constant.other.database-name.sql` |
+
+### Preview
+
+SQL keywords such as `SELECT`, `FROM`, `INNER JOIN`, `WHERE`, `GROUP BY`, `ORDER BY`, and `LIMIT` are rendered in `#fb5245`. Table and alias names (`users`, `lesson_progress`, `u`, `l`) appear in `#8ec07c`.
+
+```sql
+SELECT
+  u.id,
+  u.name,
+  COUNT(l.id) AS lesson_count
+FROM users AS u
+  INNER JOIN lesson_progress AS l ON u.id = l.user_id
+WHERE u.active = TRUE
+GROUP BY u.id, u.name
+ORDER BY lesson_count DESC
+LIMIT 10;
+```

@@ -1,0 +1,52 @@
+---
+title: "Python Syntax Highlighting in Codely Theme"
+sidebarTitle: "Python"
+description: "How Codely Dark colors Python code — decorators, docstrings, self parameters, f-strings, type hints, and pip module names, all with distinct hues."
+---
+
+Codely Dark ships with first-class Python support, covering the full range of Python-specific TextMate grammar scopes. Docstrings are rendered in a warm muted tone to visually separate documentation from executable code. Decorators and class methods receive a vivid coral red, `self` and language-special parameters are colored in a soft pink-mauve, f-string placeholders get their own accent, and built-in type annotations are styled distinctly so they never blend into surrounding identifiers. Pip package names in `requirements.txt` files are highlighted too, giving dependency files the same visual clarity as source code.
+
+## Token Color Reference
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| Python docstrings | `#a89984` | italic | `string.quoted.docstring.multi.python` |
+| Python decorators | `#fb5245` | italic | `entity.name.function.decorator.python`, `punctuation.definition.decorator.python` |
+| `self` parameter | `#fb5245` | italic | `variable.parameter.function.language.special.self.python`, `variable.language.special.self.python` |
+| Python class methods | `#8ec07c` | — | `source.python entity.name.function` |
+| Python logical operators | `#fb5245` | italic | `source.python keyword.operator.logical.python` |
+| Python function call arguments | `#ebdbb2` | — | `source.python meta.function-call.arguments.python` |
+| Python data types / builtins | `#fac149` | — | `source.python support.type.python` |
+| Argument parentheses | `#ebdbb2` | — | `source.python punctuation.definition.arguments.begin.python`, `...end.python` |
+| F-string format placeholders | `#fac149` | — | `source.python constant.character.format.placeholder.other.python` |
+| F-string prefix (`f`) | `#b8bb26` | — | `source.python storage.type.string.python` |
+| Pip package names | `#fb5245` | italic | `source.pip-requirements`, `source.pip-requirements entity.name.class` |
+| Dockerfile / docker-compose instructions | `#fb5245` | italic | `keyword.other.special-method.dockerfile`, `entity.name.tag.yaml` |
+
+## Preview
+
+```python
+from dataclasses import dataclass
+from pathlib import Path
+
+
+@dataclass
+class VideoLesson:
+    """Represents a single CodelyTV video lesson."""
+
+    title: str
+    duration: int  # seconds
+    published: bool = False
+
+    def url_slug(self) -> str:
+        """Return a URL-safe slug derived from the title."""
+        return self.title.lower().replace(" ", "-")
+
+    def format_duration(self) -> str:
+        minutes, seconds = divmod(self.duration, 60)
+        return f"{minutes}m {seconds:02d}s"
+```
+
+<Tip>
+  Install the **Pylance** or **Pyright** extension alongside the theme — its semantic highlighting integrates with Codely Dark's token colors for richer variable and type differentiation.
+</Tip>

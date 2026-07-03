@@ -1,47 +1,60 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Get Started with Codely Theme in 3 Steps"
+sidebarTitle: "Quickstart"
+description: "Activate the Codely Dark theme in VS Code, verify syntax highlighting, and customize optional settings to match your workflow in minutes."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
-
-## Prerequisites
-
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+Once Codely Theme is [installed](/installation), activating it takes a single command. The warm Gruvbox palette — deep charcoal backgrounds, amber-cream text, and vivid accent colors — is immediately applied to every open file, the editor chrome, and the integrated terminal all at once.
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
+  <Step title="Activate the theme">
+    Open the Command Palette with `Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on macOS. Type **Preferences: Color Theme** and press `Enter`. Scroll through the list and select **Codely Dark**. The editor repaints instantly — no restart required.
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
+  <Step title="Verify the palette">
+    Open any source file. Check that:
 
-    ```bash
-    your-cli init
-    ```
+    - The **editor background** is `#1e1e1e` (deep charcoal).
+    - **Plain text and variables** appear in `#ebdbb2` (warm amber-cream).
+    - **Keywords and storage modifiers** are rendered in `#fb5245` (red), typically in italic.
+    - **Strings** glow in `#b8bb26` (yellow-green).
+    - **Function names** are highlighted in `#fac149` (gold).
+
+    If the colors match, the theme is active and working correctly.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
+  <Step title="Optional: Tune your font">
+    Codely Theme pairs especially well with a monospace font that supports ligatures, since the theme uses italic styles extensively for keywords, decorators, and comments. To enable ligatures, add the following to your `settings.json`:
 
-    ```bash
-    your-cli start
+    ```json
+    {
+      "editor.fontFamily": "Fira Code",
+      "editor.fontLigatures": true
+    }
     ```
+
+    Both [Fira Code](https://github.com/tonsky/FiraCode) and [JetBrains Mono](https://www.jetbrains.com/lp/mono/) are excellent choices. Open `settings.json` via the Command Palette by running **Preferences: Open User Settings (JSON)**.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+## Verifying Syntax Highlighting
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
+Paste the snippet below into a `.py` file to check that Python token colors are applied as expected. You should see comments in muted brown (`#a89984`), the `@dataclass` decorator in italic, class and function names in teal (`#8ec07c`), the docstring in italic brown, the f-string prefix in yellow-green (`#b8bb26`), and the `{self.name}` placeholder in gold (`#fac149`).
+
+```python
+# Codely Theme — Python preview
+from dataclasses import dataclass
+
+@dataclass
+class User:
+    name: str
+    age: int = 0
+
+    def greet(self) -> str:
+        """Return a greeting string."""
+        return f"Hello, {self.name}!"
+```
+
+<Tip>
+  Run **Developer: Inspect Editor Tokens and Scopes** from the Command Palette to see the exact TextMate scope assigned to any token under your cursor, along with the theme rule that is coloring it. This is the fastest way to understand why a particular token looks the way it does — or to find the right scope if you want to override a color in your personal `settings.json`.
 </Tip>
+
+For a full breakdown of every color in the palette, see the [Color Palette](/color-palette) reference. To understand how individual language scopes are mapped, visit [Syntax Highlighting](/syntax-highlighting).

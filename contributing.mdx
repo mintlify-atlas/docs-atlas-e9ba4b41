@@ -1,0 +1,121 @@
+---
+title: "Contributing to the Codely VS Code Theme"
+sidebarTitle: "Contributing"
+description: "Learn how to fork, modify, preview, and submit changes to the Codely VS Code Theme — from editing token colors to building and publishing the extension."
+---
+
+Contributions to the Codely VS Code Theme are welcome. Whether you've spotted a token color that looks off in your favorite language, want to add syntax highlighting support for a new language, or simply want to improve the README — every improvement helps make the theme better for everyone.
+
+## Prerequisites
+
+Before getting started, make sure you have the following installed:
+
+- **Visual Studio Code** — any version `^1.51.0`
+- **Node.js and npm** — required to install and run `vsce`, the VS Code extension packaging tool
+- **Git** — for cloning your fork and submitting pull requests
+
+## Setting Up Your Development Environment
+
+<Steps>
+  <Step title="Fork the repository">
+    Visit [https://github.com/CodelyTV/vscode-theme](https://github.com/CodelyTV/vscode-theme) on GitHub and click **Fork** to create your own copy of the repository.
+  </Step>
+  <Step title="Clone your fork locally">
+    Clone your fork to your local machine and navigate into the project directory:
+
+    ```bash
+    git clone https://github.com/<your-username>/vscode-theme.git && cd vscode-theme
+    ```
+  </Step>
+  <Step title="Install dev dependencies">
+    Install the development dependencies, which includes `vsce` — the VS Code Extension CLI used to package the theme:
+
+    ```bash
+    npm install
+    ```
+  </Step>
+  <Step title="Open the project in VS Code">
+    Open the cloned project folder directly in VS Code:
+
+    ```bash
+    code .
+    ```
+  </Step>
+  <Step title="Launch the Extension Development Host">
+    Press `F5` to launch the **Extension Development Host** — a separate VS Code window with your local version of the Codely Theme already loaded and active. This is your live preview environment for testing changes.
+  </Step>
+</Steps>
+
+## Editing the Theme
+
+All visual styling for the Codely Dark theme is defined in a single file:
+
+```
+themes/dark.codely-theme-color-theme.json
+```
+
+This file contains two top-level sections:
+
+- **`colors`** — VS Code workbench UI colors. These control the appearance of surfaces like the Activity Bar, Status Bar, Editor background, Tabs, Sidebar, Panels, Terminal, and more.
+- **`tokenColors`** — TextMate grammar scope rules for syntax highlighting. Each rule maps one or more TextMate scopes to a `foreground` color and optional `fontStyle` (e.g., `italic`, `bold`).
+
+Any changes you save to this file are **automatically applied** to the Extension Development Host window — no restart or reload is needed.
+
+## Finding the Right Scope
+
+To identify the exact TextMate scope for a token you want to style:
+
+1. In the **Extension Development Host** window, open a source file in the language you want to inspect.
+2. Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).
+3. Run the **Developer: Inspect Editor Tokens and Scopes** command.
+4. Click on any token in the editor — the panel will show all TextMate scopes assigned to that token, from most specific to least specific.
+
+Once you have the scope name, search for it in `themes/dark.codely-theme-color-theme.json`. If a matching rule already exists, update the `foreground` or `fontStyle`. If no rule exists, add a new entry to the `tokenColors` array:
+
+```json
+{
+  "name": "My New Rule",
+  "scope": [
+    "your.scope.name.here"
+  ],
+  "settings": {
+    "foreground": "#B8BB26",
+    "fontStyle": "italic"
+  }
+}
+```
+
+<Note>
+  When changing workbench `colors`, refer to the full VS Code color token reference at [https://code.visualstudio.com/api/references/theme-color](https://code.visualstudio.com/api/references/theme-color) for the complete list of supported tokens.
+</Note>
+
+## Building a .vsix Package
+
+The `vsce package` command compiles the extension into a distributable `.vsix` file that can be installed locally or published to the Marketplace. Run the build script defined in `package.json`:
+
+```bash
+npm run build
+```
+
+This runs `vsce package` and produces a file like `codely-theme-0.0.1.vsix` in the project root. To install it directly in VS Code:
+
+```bash
+code --install-extension codely-theme-*.vsix
+```
+
+<Tip>
+  The VS Code extension quickstart guide at [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension) is a good reference for understanding the overall extension structure and development workflow.
+</Tip>
+
+## Submitting a Pull Request
+
+Once you are happy with your changes:
+
+1. Commit your changes and push them to your fork on GitHub.
+2. Open a Pull Request against the `main` branch of [CodelyTV/vscode-theme](https://github.com/CodelyTV/vscode-theme).
+3. In the PR description, clearly explain:
+   - Which token or workbench color was changed
+   - Why the change improves the theme (e.g., better contrast, more accurate language support, alignment with the Gruvbox palette)
+   - Any languages or file types affected
+
+The maintainers will review your PR, and may request adjustments before merging.

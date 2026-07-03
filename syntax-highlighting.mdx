@@ -1,0 +1,139 @@
+---
+title: "Syntax Highlighting Scopes in Codely Theme"
+sidebarTitle: "Syntax Highlighting"
+description: "How Codely Theme colors and styles each TextMate token scope — from comments and variables to decorators, operators, and regular expressions."
+---
+
+Codely Theme uses TextMate grammar scopes to assign colors and font styles to every token in the editor. The theme file defines 80+ token rules that cover both generic cross-language scopes and language-specific rules tailored for Python, JavaScript, CSS, JSON, Markdown, and SQL. Generic rules lay down a consistent baseline; language-specific rules then refine individual tokens where a language's grammar warrants it.
+
+## Generic Token Scopes
+
+The following table covers the core scope groups that apply across all languages. Each row lists the display color, font style, and the TextMate scopes that trigger the rule.
+
+| Scope Group | Color | Style | TextMate Scopes |
+|---|---|---|---|
+| Comments | `#a89984` | italic | `comment`, `punctuation.definition.comment` |
+| Variables | `#ebdbb2` | normal | `variable`, `string constant.other.placeholder` |
+| Keywords & Storage | `#fb5245` | italic | `keyword`, `storage.type`, `storage.modifier` |
+| Operators | `#ebdbb2` | normal | `keyword.operator`, `keyword.operator.arithmetic`, `keyword.operator.logical`, `keyword.operator.new` |
+| Operator / Misc punctuation | `#8ec07c` | normal | `meta.tag`, `punctuation.definition.tag`, `punctuation.section.embedded`, `keyword.other.template`, `keyword.other.substitution` |
+| Functions | `#fac149` | normal | `entity.name.function`, `meta.function-call`, `variable.function`, `support.function`, `keyword.other.special-method` |
+| Numbers & Constants | `#d3869b` | normal | `constant.numeric`, `constant.language`, `support.constant`, `constant.character`, `variable.parameter`, `keyword.other.unit`, `keyword.other` |
+| Strings | `#b8bb26` | normal | `string` |
+| Class & Support | `#8ec07c` | normal | `entity.name`, `support.type`, `support.class`, `entity.other.inherited-class`, `support.orther.namespace.use.php`, `support.other.namespace.php` |
+| Parameters & Block Comments | `#ebdbb2` | normal | `variable.parameter`, `comment.block` |
+| Symbols & Markup Heading | `#ebdbb2` | normal | `constant.other.symbol`, `constant.other.key`, `entity.other.inherited-class`, `markup.heading` |
+| Tags | `#fb5245` | normal | `entity.name.tag`, `meta.tag.sgml`, `markup.deleted.git_gutter` |
+| Regular Expressions | `#89ddff` | normal | `string.regexp` |
+| Escape Characters | `#89ddff` | normal | `constant.character.escape` |
+| Decorators (JS) | `#82aaff` | italic | `tag.decorator.js entity.name.tag.js`, `tag.decorator.js punctuation.definition.tag.js` |
+| Markup — Italic | `#fb5245` | italic | `markup.italic` |
+| Markup — Bold | `#fb5245` | bold | `markup.bold`, `markup.bold string` |
+
+## Language-Specific Highlights
+
+Several languages receive dedicated scope overrides to handle grammar quirks or to reinforce the theme's semantic color assignments.
+
+### Python
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| Docstrings | `#a89984` | italic | `string.quoted.docstring.multi.python` |
+| Decorators | — | italic | `entity.name.function.decorator.python` |
+| `self` / `this` / `super` | `#fb5245` | italic | `variable.parameter.function.language.special.self.python`, `variable.language.this`, `variable.language.super` |
+| Built-in functions | `#fb5245` | italic | `support.function.builtin.python` |
+| Class methods | `#8ec07c` | normal | `source.python entity.name.function` |
+| Logical operators | `#fb5245` | italic | `source.python keyword.operator.logical.python` |
+| Data types | `#fac149` | normal | `source.python support.type.python` |
+| f-string prefix | `#b8bb26` | normal | `source.python storage.type.string.python` |
+| f-string placeholders | `#fac149` | normal | `source.python constant.character.format.placeholder.other.python` |
+| pip requirements | `#fb5245` | italic | `source.pip-requirements`, `source.pip-requirements entity.name.class` |
+
+### JavaScript / TypeScript
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| Class methods | `#82aaff` | italic | `entity.name.method.js` |
+| Support classes / types | `#fac149` | normal | `source.js support.class`, `source.js entity.name.type.js` |
+| `in` / `of` / `new` operators | `#fb5245` | italic | `source.js keyword.operator.expression.in.js`, `keyword.operator.expression.of.js`, `keyword.operator.new` |
+| Block variables | `#ebdbb2` | normal | `source.js meta.block variable.other` |
+
+### HTML
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| Tags | `#fb5245` | italic | `entity.name.tag.html` |
+| Attributes | `#fb5245` | normal | `entity.other.attribute-name.html` |
+| Tag punctuation (`<` / `>`) | `#8ec07c` | italic | `punctuation.definition.tag.begin.html`, `punctuation.definition.tag.end.html` |
+| DOCTYPE | `#8ec07c` | bold | `meta.tag.sgml.doctype` |
+
+### CSS / SCSS / Sass
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| Property names | `#ebdbb2` | normal | `source.css support.type.property-name` (and SCSS/Less/Stylus variants) |
+| Selectors & values | `#fb5245` | italic | `meta.selector.css`, `meta.property-value.css` |
+| Support functions | `#fb5245` | italic | `source.css support.function` |
+| Units & constants | `#b8bb26` | normal | `source.css support.constant`, `source.css keyword.other.unit` |
+| CSS classes | `#fb5245` | italic | `entity.other.attribute-name.class` |
+
+### JSON
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| Top-level keys | `#fb5245` | italic | `source.json meta.structure.dictionary.json support.type.property-name.json` |
+| All dictionary keys | `#fac149` | normal | `source.json meta.structure.dictionary.json` |
+| Values & punctuation | `#ebdbb2` | normal | `source.json meta.structure.dictionary.value.json`, `source.json punctuation.*` |
+
+### Markdown
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| Plain text | `#ebdbb2` | normal | `text.html.markdown`, `punctuation.definition.list_item.markdown` |
+| Headings | `#fb5245` | italic | `markup.heading.markdown entity.name`, `markup.heading.markdown punctuation.definition.heading.markdown` |
+| Inline code | `#c792ea` | normal | `text.html.markdown markup.inline.raw.markdown` |
+
+## Font Styles
+
+Italic is used on comments, certain keywords and storage modifiers, function parameters, Python `self`/`super`, decorators, and language keywords such as `in` / `of`. This visually separates annotation and metadata from executable logic — you can spot a comment or a type modifier without reading the word. Bold appears only on `markup.bold` tokens (Markdown bold text), keeping emphasis meaningful and rare inside source code.
+
+## Inspecting Scopes
+
+If you want to know the exact TextMate scope of any token in your editor, VS Code ships a built-in inspector:
+
+<Steps>
+  <Step title="Open the Command Palette">
+    Press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows / Linux).
+  </Step>
+  <Step title="Run the inspect command">
+    Type **Developer: Inspect Editor Tokens and Scopes** and press Enter.
+  </Step>
+  <Step title="Click a token">
+    Click any character in the editor. A panel appears showing the token's TextMate grammar scopes, the theme rule that matched, and the resulting color and font style.
+  </Step>
+  <Step title="Find the rule in the theme file">
+    Copy the innermost scope name and search for it in `themes/dark.codely-theme-color-theme.json` inside the repository to see exactly which rule applies.
+  </Step>
+</Steps>
+
+<Tip>
+  To override a single token color for your personal setup, use `editor.tokenColorCustomizations` in VS Code's `settings.json` — no need to fork or modify the theme itself.
+
+  ```json settings.json
+  {
+    "editor.tokenColorCustomizations": {
+      "[Codely Dark]": {
+        "textMateRules": [
+          {
+            "scope": "comment",
+            "settings": {
+              "foreground": "#928374",
+              "fontStyle": "italic"
+            }
+          }
+        ]
+      }
+    }
+  }
+  ```
+</Tip>

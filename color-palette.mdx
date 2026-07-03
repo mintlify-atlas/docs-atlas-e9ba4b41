@@ -1,0 +1,50 @@
+---
+title: "Codely Theme Color Palette: Every Token Explained"
+sidebarTitle: "Color Palette"
+description: "Complete reference of every color used in Codely Dark — backgrounds, foregrounds, accent hues, and how they map to VS Code UI surfaces and syntax scopes."
+---
+
+Codely Dark is rooted in the Gruvbox dark palette — a retro-groove color scheme that pairs warm neutral backgrounds with carefully hue-shifted accents. The dark brown-black backgrounds and warm cream foregrounds are chosen to reduce eye strain during long coding sessions, while the vivid yellows, reds, teals, and purples ensure each syntax token reads as a distinct visual category at a glance.
+
+## Background & Surface Colors
+
+These colors form the foundational layers of every editor and workbench surface.
+
+| Token | Hex | Used For |
+|---|---|---|
+| Editor background | `#1e1e1e` | Main editor canvas, sidebar, status bar, terminal, title bar |
+| Active element background | `#262626` | Active tab, line highlight, selected list items, suggest widget selection |
+| Selection / match highlight | `#442b43` | Text selection, find match highlight, bracket match background |
+
+## Foreground Colors
+
+These colors handle all readable text in the editor and UI surfaces.
+
+| Token | Hex | Used For |
+|---|---|---|
+| Primary text | `#ebdbb2` | Editor foreground, sidebar text, status bar text, terminal text |
+| Muted / inactive | `#a89984` | Comments, inactive line numbers, placeholder-adjacent muted labels |
+| Line numbers | `#555049` | Inactive gutter line numbers |
+| Active line number | `#c6c6c6` | The line number on the currently focused line |
+
+## Accent Colors
+
+Accent colors carry semantic meaning and are applied consistently across both syntax highlighting and workbench surfaces.
+
+| Color Name | Hex | Primary Use |
+|---|---|---|
+| Yellow-green | `#b8bb26` | Active tab indicator border, Activity Bar active icon, status bar remote item, panel title border, input active border |
+| Red | `#fb5245` | Keywords, storage modifiers, HTML tags, functions, CSS selectors, error markers |
+| Teal | `#8ec07c` | Operators, strings, Class/Support types, HTML punctuation, Python class methods |
+| Gold / amber | `#fac149` | Numbers, constants, JS support classes, JSON keys, Python data types |
+| Purple / pink | `#d3869b` | Constants, tag attributes, function parameters, embedded values |
+| Cursor | `#81277e` | Editor cursor foreground |
+| Bright blue | `#95b7f7` | Terminal ANSI bright blue, chart accents |
+
+## Semantic Meaning
+
+Each accent hue carries a consistent semantic role throughout the theme. **Red** (`#fb5245`) signals high-importance tokens that control program flow — keywords, storage modifiers, HTML tags, and function names — as well as error states. **Gold** (`#fac149`) marks numeric and constant values, keeping data literals immediately distinguishable from logic. **Teal** (`#8ec07c`) covers relational tokens like strings and operators, bridging data and logic visually. **Purple/pink** (`#d3869b`) is reserved for symbolic tokens and class hierarchies, including inherited classes and embedded values. **Yellow-green** (`#b8bb26`) acts as a structural indicator in the workbench — it highlights which tab is active, which Activity Bar icon is focused, and which remote connection is live in the status bar.
+
+<Note>
+  All background colors have zero transparency. Selection and match highlights use semi-transparent alpha variants to layer gracefully over syntax colors without fully obscuring the token beneath.
+</Note>

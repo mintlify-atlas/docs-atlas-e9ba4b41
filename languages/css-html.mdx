@@ -1,0 +1,91 @@
+---
+title: "CSS & HTML Syntax Highlighting in Codely Theme"
+sidebarTitle: "CSS & HTML"
+description: "Codely Dark token colors for CSS properties, selectors, values, units, HTML tags, attributes, and Dockerfile instructions."
+---
+
+Codely Dark provides fine-grained token rules for CSS, Sass, SCSS, Less, Stylus, PostCSS, and plain HTML. CSS property names are displayed in a warm neutral tone, while selectors and property values are rendered in a vivid coral italic so the structure of a rule is immediately visible. Units and support constants use Gruvbox yellow-green, and CSS grid fractions (`fr`) get their own italic coral accent. HTML tags are colored in coral italic, attributes in a matching coral regular weight, and angle-bracket punctuation in a muted sage green. Dockerfile and `docker-compose.yml` instructions share the same italic coral treatment, keeping infrastructure files readable alongside application source.
+
+## CSS Token Color Reference
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| CSS property names | `#ebdbb2` | — | `source.css support.type.property-name` (and Sass, SCSS, Less, Stylus, PostCSS variants) |
+| CSS selectors and property values | `#fb5245` | italic | `meta.selector.css`, `support.constant`, `meta.property-value.css` |
+| CSS classes (`.class-name`) | `#fb5245` | italic | `entity.other.attribute-name.class` |
+| CSS support functions (`calc`, `var`, `rgb`) | `#fb5245` | italic | `source.css support.function` |
+| CSS support constants and units | `#b8bb26` | — | `source.css support.constant`, `source.css keyword.other.unit`, `source.css variable.parameter` |
+| CSS grid fractions (`fr` unit) | `#fb5245` | italic | `source.css keyword.other.unit.fr.css` |
+| Dockerfile / docker-compose instructions | `#fb5245` | italic | `keyword.other.special-method.dockerfile`, `entity.name.tag.yaml` |
+
+## HTML Token Color Reference
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| HTML `DOCTYPE` | `#8ec07c` | bold | `meta.tag.sgml.doctype` |
+| HTML tags | `#fb5245` | italic | `entity.name.tag.html` |
+| HTML attributes | `#fb5245` | — | `text.html.basic entity.other.attribute-name.html`, `entity.other.attribute-name.html` |
+| HTML angle-bracket punctuation | `#8ec07c` | italic | `punctuation.definition.tag.end.html`, `punctuation.definition.tag.begin.html` |
+
+## CSS Preview
+
+```css
+.video-player {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.5rem;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+}
+
+#main-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 5vw, 3rem);
+}
+
+@media (max-width: 768px) {
+  .video-player {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+## HTML Preview
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodelyTV</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main id="main-content">
+      <article class="video-player" data-id="123">
+        <h1>Clean Code with TypeScript</h1>
+      </article>
+    </main>
+  </body>
+</html>
+```
+
+## Dockerfile
+
+Dockerfile instructions and `docker-compose.yml` service keys are styled with `#fb5245` italic, matching the theme's coral keyword treatment and making image, build, and run directives easy to scan.
+
+```dockerfile
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY . .
+RUN npm run build
+
+EXPOSE 3000
+CMD ["node", "dist/server.js"]
+```

@@ -1,0 +1,61 @@
+{
+  "projectType": "general",
+  "projectName": "Codely VS Code Theme",
+  "projectDescription": "A dark Gruvbox-inspired Visual Studio Code color theme built by CodelyTV, designed for productivity with carefully tuned syntax highlighting across Python, JavaScript, CSS, HTML, JSON, Markdown, SQL, and more.",
+  "theme": "willow",
+  "primaryColor": "#de9924",
+  "lightColor": "#364e6f",
+  "darkColor": "#b2c0cf",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get Started",
+        "pages": [
+          "introduction",
+          "installation",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Theme Details",
+        "pages": [
+          "color-palette",
+          "syntax-highlighting",
+          "ui-customization"
+        ]
+      },
+      {
+        "group": "Language Support",
+        "pages": [
+          "languages/python",
+          "languages/javascript",
+          "languages/css-html",
+          "languages/json-markdown-sql"
+        ]
+      },
+      {
+        "group": "Contributing",
+        "pages": [
+          "contributing",
+          "changelog"
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Dark Gruvbox-inspired color palette optimized for readability",
+    "Comprehensive syntax highlighting for Python, JavaScript, CSS, HTML, JSON, Markdown, and SQL",
+    "Carefully tuned UI colors for Activity Bar, Status Bar, Sidebar, Tabs, and Panels",
+    "Italic font styles for comments, parameters, and keywords",
+    "Distinctive cursor and selection highlight colors for improved focus",
+    "Integrated terminal ANSI color support",
+    "Debug console and gutter colors for efficient debugging workflows"
+  ],
+  "publicApiSurface": [
+    "Theme: Codely Dark (vs-dark)",
+    "Theme file: themes/dark.codely-theme-color-theme.json",
+    "VSCode engine: ^1.51.0",
+    "Publisher: Codely",
+    "Extension ID: Codely.codely-theme"
+  ]
+}

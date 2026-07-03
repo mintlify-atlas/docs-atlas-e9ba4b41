@@ -1,0 +1,47 @@
+---
+title: "Codely Theme Release History and Changelog"
+sidebarTitle: "Changelog"
+description: "Version history for the Codely VS Code Theme — initial release and future updates to color tokens, language support, and UI theming."
+---
+
+This changelog tracks every notable change to the Codely Theme. The project follows the [Keep a Changelog](https://keepachangelog.com) format, so each version documents what was added, changed, or fixed in a consistent and readable way.
+
+## v0.0.1 — 2020-03-04
+
+Initial release of the **Codely Dark** theme for Visual Studio Code.
+
+- **Initial release** of the Codely Dark theme, published to the VS Code Marketplace under the `Codely` publisher
+- **Gruvbox-inspired dark palette** — built around a `#1e1e1e` editor background and `#ebdbb2` primary foreground, with accent colors drawn from the classic Gruvbox spectrum (`#b8bb26` yellow-green, `#fac149` orange-yellow, `#fb5245` red, `#8ec07c` aqua-green, `#d3869b` purple)
+- **Syntax highlighting** for the following languages and file formats:
+  - Python (including decorators, docstrings, f-strings, type hints, `self`, `super`, and built-in functions)
+  - JavaScript (classes, methods, decorators, ES7 operators, `in`/`of`/`new` keywords)
+  - CSS, Sass, SCSS, Less, Stylus, and PostCSS (property names, selectors, values, units, functions)
+  - HTML (tags, attributes, punctuation, and DOCTYPE)
+  - JSON (key-value structure with level-aware coloring)
+  - Markdown (headings, bold, italic, blockquotes, links, fenced code blocks, separators, tables)
+  - SQL (DML keywords, table names, database names, aliases)
+  - Dockerfile and docker-compose YAML
+- **Full VS Code workbench UI coverage** — theme tokens defined for:
+  - Activity Bar (background, icons, badges, borders, active indicator)
+  - Status Bar (normal, no-folder, debugging, and remote item states)
+  - Sidebar and Sidebar Section Headers
+  - Editor Tabs (active, inactive, hover, modified, pinned, and unfocused variants)
+  - Panels and Panel Titles
+  - Terminal (foreground, border, and selection)
+  - Debug toolbar, Debug Console, and Debug View
+- **Integrated terminal ANSI color support** — full palette of 16 ANSI colors mapped to theme-consistent values, including bright variants for black, red, green, yellow, blue, magenta, cyan, and white
+- **Debug console, gutter, and breakpoint icon colors** — distinct colors for active, disabled, unverified, and current-stack-frame breakpoint states, plus step controls (continue, pause, step over, step into, step out, restart, stop, disconnect)
+
+<Note>
+  To receive updates automatically, install the theme from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Codely.codely-theme) — VS Code will notify you when a new version is available.
+</Note>
+
+## What's Next
+
+The Codely Theme is actively maintained and future releases may introduce:
+
+- **Additional theme variants** — for example, a light variant for environments where a dark background is not ideal
+- **Additional language-specific token rules** — expanded coverage for languages such as TypeScript, Rust, Go, PHP, Ruby, and shell scripts
+- **Support for newer VS Code API color tokens** introduced after the initial `v1.51.0` engine requirement, including semantic highlighting and newer workbench surface tokens
+
+To follow ongoing development, request a feature, or report a color that looks off in your workflow, visit the issue tracker at [https://github.com/CodelyTV/vscode-theme/issues](https://github.com/CodelyTV/vscode-theme/issues).

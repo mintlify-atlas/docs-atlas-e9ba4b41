@@ -1,0 +1,51 @@
+---
+title: "JavaScript & TypeScript Syntax Highlighting in Codely Theme"
+sidebarTitle: "JavaScript"
+description: "How Codely Dark styles JavaScript and TypeScript — class components, methods, variables, decorators, template literals, and the ES7 bind operator."
+---
+
+Codely Dark covers the complete spectrum of JavaScript and TypeScript syntax, from class declarations and Angular-style decorators to template literal expressions and the ES7 bind operator. Language-reserved variables such as `this`, `super`, and `self` are rendered in a warm coral italic so they stand out against ordinary identifiers. Class names and support types are colored in Gruvbox yellow, while method definitions use a complementary italic treatment. Block-scoped variables inside `meta.block` contexts receive their own color to help you track shadowed names at a glance.
+
+## Token Color Reference
+
+| Token | Color | Style | Scope |
+|---|---|---|---|
+| Sub-methods (module / class import names) | `#ff5370` | — | `entity.name.module.js`, `variable.import.parameter.js`, `variable.other.class.js` |
+| Language methods (`this`, `super`) | `#fb5245` | italic | `variable.language` |
+| `entity.name.method.js` | `#82aaff` | italic | `entity.name.method.js` |
+| JS block variables | `#ebdbb2` | — | `source.js meta.block variable.other` |
+| Class method (`meta.method.js`) | `#82aaff` | — | `meta.class-method.js entity.name.function.js`, `variable.function.constructor` |
+| Attributes / HTML-like attributes | `#fb5245` | italic | `entity.other.attribute-name`, `entity.name.tag.structure.any.html`, `entity.name.tag` |
+| ES7 bind operator | `#fb5245` | italic | `source.js constant.other.object.key.js string.unquoted.label.js` |
+| JS keyword operators (`in`, `of`, `new`) | `#fb5245` | italic | `source.js keyword.operator.expression.in.js`, `...of.js`, `keyword.operator.new` |
+| JS support class / type names | `#fac149` | — | `source.js support.class`, `source.js entity.name.type.js` |
+| JS decorators | `#82aaff` | italic | `tag.decorator.js entity.name.tag.js`, `tag.decorator.js punctuation.definition.tag.js` |
+
+## Preview
+
+```typescript
+import { Injectable } from '@angular/core';
+
+interface Course {
+  id: string;
+  title: string;
+  lessons: number;
+}
+
+@Injectable({ providedIn: 'root' })
+export class CourseService {
+  private readonly baseUrl = 'https://api.codely.tv';
+
+  async fetchCourse(id: string): Promise<Course> {
+    const response = await fetch(`${this.baseUrl}/courses/${id}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch course: ${response.status}`);
+    }
+    return response.json() as Promise<Course>;
+  }
+}
+```
+
+<Tip>
+  The theme targets both JavaScript and TypeScript TextMate grammar scopes. If you use the official **TypeScript** VS Code extension, semantic highlighting is automatically supported.
+</Tip>

@@ -1,0 +1,49 @@
+---
+title: "Codely Theme: A Gruvbox-Inspired VS Code Dark Theme"
+sidebarTitle: "Introduction"
+description: "Codely Theme is a warm, dark VS Code color theme by CodelyTV. Gruvbox-inspired palette with full syntax and UI coverage for productive coding."
+---
+
+Codely Theme is a dark color theme for Visual Studio Code crafted by [CodelyTV](https://codely.com). Built on a warm Gruvbox-inspired palette, it wraps every corner of the editor — from the Activity Bar to the integrated terminal — in tones that reduce eye strain during long coding sessions. Carefully chosen accent colors keep keywords, strings, functions, and comments visually distinct without ever feeling garish, while selective italic emphasis guides your eye to the constructs that matter most.
+
+<CardGroup cols={2}>
+  <Card title="Installation" icon="download" href="/installation">
+    Install Codely Theme from the VS Code Marketplace or manually in minutes.
+  </Card>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Activate the theme and verify syntax highlighting in three steps.
+  </Card>
+  <Card title="Color Palette" icon="palette" href="/color-palette">
+    Explore every background, foreground, and accent color in the theme.
+  </Card>
+  <Card title="Syntax Highlighting" icon="code" href="/syntax-highlighting">
+    See how Codely Theme colors each language's tokens and scopes.
+  </Card>
+</CardGroup>
+
+## Design Philosophy
+
+Codely Theme draws its roots from the [Gruvbox](https://github.com/morhetz/gruvbox) palette — a retro-groove color scheme celebrated for its warm, amber-tinted tones that feel easy on the eyes across many hours of work.
+
+The core palette is built around a small set of intentional choices:
+
+- **Foreground — `#ebdbb2`** — A warm amber-cream used for plain text, variables, and most UI labels. It reads clearly against dark backgrounds without the harsh blue-white tint of pure white.
+- **Editor background — `#1e1e1e`** — Deep charcoal for the main editing surface, providing high contrast with the foreground while staying softer than true black.
+- **Surface background — `#262626`** — A slightly lighter charcoal used for the Activity Bar, active tabs, line highlights, and panel backgrounds, creating subtle depth without hard borders.
+- **Yellow-green accent — `#b8bb26`** — Vivid and warm, used for strings, active tab borders, and Activity Bar icons. Immediately recognisable as a Gruvbox signature color.
+- **Red accent — `#fb5245`** — Applied to keywords, storage modifiers, tags, and error states. Bold enough to demand attention, yet tonally consistent with the warm palette.
+- **Teal accent — `#8ec07c`** — Used for class names, HTML punctuation, and SQL table identifiers. A calming counterpoint to the red and yellow accents.
+- **Gold accent — `#fac149`** — Reserved for function names and Python data types, giving callable identifiers a warm, distinctive glow.
+- **Purple accent — `#d3869b`** — Highlights numeric constants, language constants, and function parameters — tokens that carry concrete values rather than structural meaning.
+
+The result is a palette where warm tones dominate but every category of token has a clear, memorable color assignment, making code structure scannable at a glance.
+
+## What's Included
+
+- **One dark theme variant** — "Codely Dark" (`vs-dark` base), registered under the extension ID `codely-theme` by publisher `Codely` (version `0.0.1`).
+- **Full UI token coverage** — Activity Bar, Status Bar, Sidebar, Editor Tabs, Panels, Terminal, Debug toolbar, Debug Console, Minimap, Breadcrumbs, Notifications, Settings UI, Quick Input, Peek View, and more.
+- **Syntax highlighting for:** Python (including decorators, f-strings, docstrings, and type annotations), JavaScript (including ES module syntax and class methods), CSS/SCSS (selectors, property names, values, and units), HTML (tags, attributes, and DOCTYPE), JSON (key levels and value types), Markdown (headings, bold, italic, links, blockquotes, and fenced code blocks), SQL (DML keywords, table names, and aliases), and Dockerfile / docker-compose.
+
+<Note>
+  Codely Theme requires **VS Code `^1.51.0`** — any Visual Studio Code version released from **November 2020** onwards is fully supported. No additional runtime dependencies are needed.
+</Note>

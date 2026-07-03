@@ -1,0 +1,160 @@
+---
+title: "VS Code UI Colors in Codely Dark Theme"
+sidebarTitle: "UI Customization"
+description: "Full reference for every VS Code workbench UI surface styled by Codely Dark — Activity Bar, Status Bar, Sidebar, Tabs, Terminal, Debug, and more."
+---
+
+Codely Dark styles the entire VS Code workbench, not just the editor. Every surface — from the Activity Bar to the integrated terminal — draws from the same Gruvbox-rooted palette so nothing feels out of place. The sections below catalogue every workbench color token the theme sets, grouped by surface area.
+
+## Editor
+
+The editor area itself uses the deepest background tone for the canvas, a slightly lighter value for the active line, and the purple cursor to make the insertion point unmistakable.
+
+| Surface | Color Token | Hex |
+|---|---|---|
+| Background | `editor.background` | `#1e1e1e` |
+| Foreground | `editor.foreground` | `#ebdbb2` |
+| Line highlight background | `editor.lineHighlightBackground` | `#262626` |
+| Selection | `editor.selectionBackground` | `#442b43` |
+| Find match highlight | `editor.findMatchHighlightBackground` | `#442b43` |
+| Cursor | `editorCursor.foreground` | `#81277e` |
+| Bracket match background | `editorBracketMatch.background` | `#442b43` |
+| Bracket match border | `editorBracketMatch.border` | `#262626` |
+| Indent guide | `editorIndentGuide.background` | `#262626` |
+| Line number | `editorLineNumber.foreground` | `#555049` |
+| Active line number | `editorLineNumber.activeForeground` | `#c6c6c6` |
+| Suggest widget background | `editorSuggestWidget.background` | `#1e1e1e` |
+| Suggest widget border | `editorSuggestWidget.border` | `#262626` |
+| Suggest widget foreground | `editorSuggestWidget.foreground` | `#ebdbb2` |
+| Suggest widget selection | `editorSuggestWidget.selectedBackground` | `#262626` |
+
+## Activity Bar
+
+The Activity Bar uses the yellow-green accent for all active states, making the currently selected view icon immediately obvious.
+
+| Surface | Color Token | Hex |
+|---|---|---|
+| Background | `activityBar.background` | `#1e1e1e` |
+| Active item background | `activityBar.activeBackground` | `#262626` |
+| Border | `activityBar.border` | `#262626` |
+| Active icon border (indicator) | `activityBar.activeBorder` | `#b8bb26` |
+| Active icon foreground | `activityBar.foreground` | `#b8bb26` |
+| Inactive icon foreground | `activityBar.inactiveForeground` | `#ebdbb2` |
+| Drop border | `activityBar.dropBorder` | `#b8bb26` |
+| Badge background | `activityBarBadge.background` | `#ebdbb2` |
+| Badge foreground | `activityBarBadge.foreground` | `#1e1e1e` |
+
+## Sidebar
+
+The sidebar shares the same background as the main editor, keeping the visual footprint minimal.
+
+| Surface | Color Token | Hex |
+|---|---|---|
+| Background | `sideBar.background` | `#1e1e1e` |
+| Foreground | `sideBar.foreground` | `#ebdbb2` |
+| Border | `sideBar.border` | `#262626` |
+| Title foreground | `sideBarTitle.foreground` | `#ebdbb2` |
+| Active selection background | `list.activeSelectionBackground` | `#262626` |
+
+## Tabs
+
+The active tab lifts slightly in brightness and gains the yellow-green bottom border indicator, while inactive tabs sit at the base background tone.
+
+| Surface | Color Token | Hex |
+|---|---|---|
+| Active tab background | `tab.activeBackground` | `#262626` |
+| Active tab border (bottom indicator) | `tab.activeBorder` | `#b8bb26` |
+| Inactive tab background | `tab.inactiveBackground` | `#1e1e1e` |
+| Tab border | `tab.border` | `#262626` |
+| Tab hover background | `tab.hoverBackground` | `#262626` |
+| Tab container background | `editorGroupHeader.tabsBackground` | `#1e1e1e` |
+| Tab container border | `editorGroupHeader.border` | `#262626` |
+
+## Status Bar
+
+The status bar stays flat and unobtrusive in the base background color, while the remote connection badge uses the yellow-green accent on a dark foreground for high contrast.
+
+| Surface | Color Token | Hex |
+|---|---|---|
+| Background | `statusBar.background` | `#1e1e1e` |
+| Foreground | `statusBar.foreground` | `#ebdbb2` |
+| Border | `statusBar.border` | `#262626` |
+| No-folder background | `statusBar.noFolderBackground` | `#1e1e1e` |
+| Remote item background | `statusBarItem.remoteBackground` | `#b8bb26` |
+| Remote item foreground | `statusBarItem.remoteForeground` | `#1e1e1e` |
+
+## Panels & Terminal
+
+The panel area (Problems, Output, Terminal) uses the same background as the editor. Terminal ANSI colors are mapped to the Gruvbox-inspired accents so command-line output is immediately legible.
+
+| Surface | Color Token | Hex |
+|---|---|---|
+| Panel background | `panel.background` | `#1e1e1e` |
+| Panel border | `panel.border` | `#262626` |
+| Panel title active border | `panelTitle.activeBorder` | `#b8bb26` |
+| Panel title active foreground | `panelTitle.activeForeground` | `#ebdbb2` |
+| Panel title inactive foreground | `panelTitle.inactiveForeground` | `#ebdbb2` |
+| Terminal foreground | `terminal.foreground` | `#ebdbb2` |
+| Terminal border | `terminal.border` | `#262626` |
+| ANSI bright blue | `terminal.ansiBrightBlue` | `#95b7f7` |
+| ANSI bright green | `terminal.ansiBrightGreen` | `#b8bb26` |
+| ANSI green | `terminal.ansiGreen` | `#b8bb26` |
+| ANSI red | `terminal.ansiRed` | `#fb5245` |
+| ANSI white | `terminal.ansiWhite` | `#ebdbb2` |
+| ANSI yellow | `terminal.ansiYellow` | `#fac149` |
+
+## Input & Dropdown
+
+Input fields and dropdowns use the slightly elevated active-element background so they stand out from the surrounding sidebars and panels.
+
+| Surface | Color Token | Hex |
+|---|---|---|
+| Input background | `input.background` | `#262626` |
+| Input border | `input.border` | `#262626` |
+| Input foreground | `input.foreground` | `#ebdbb2` |
+| Input placeholder foreground | `input.placeholderForeground` | `#ebdbb29d` |
+| Input active option background | `inputOption.activeBackground` | `#1e1e1e` |
+| Input active option border | `inputOption.activeBorder` | `#b8bb26` |
+| Dropdown background | `dropdown.background` | `#1e1e1e` |
+| Dropdown border | `dropdown.border` | `#262626` |
+| Dropdown foreground | `dropdown.foreground` | `#ebdbb2` |
+| Dropdown list background | `dropdown.listBackground` | `#1e1e1e` |
+
+## Additional Surfaces
+
+| Surface | Color Token | Hex |
+|---|---|---|
+| Title bar active background | `titleBar.activeBackground` | `#1e1e1e` |
+| Title bar inactive background | `titleBar.inactiveBackground` | `#1e1e1e` |
+| Title bar border | `titleBar.border` | `#262626` |
+| Minimap background | `minimap.background` | `#1e1e1e` |
+| Scrollbar slider | `scrollbarSlider.background` | `#262626` |
+| Progress bar | `progressBar.background` | `#262626` |
+| Notification center border | `notificationCenter.border` | `#b8bb26` |
+| Notification header background | `notificationCenterHeader.background` | `#262626` |
+| Quick input background | `quickInput.background` | `#1e1e1e` |
+| Quick input foreground | `quickInput.foreground` | `#ebdbb2` |
+| Widget shadow | `widget.shadow` | `#262626` |
+| Window active border | `window.activeBorder` | `#262626` |
+| Menu background | `menu.background` | `#1e1e1e` |
+| Menu border | `menu.border` | `#262626` |
+| Menu selection border | `menu.selectionBorder` | `#b8bb26` |
+
+## Overriding UI Colors
+
+You can override any VS Code workbench color token without modifying the theme files. Add a `workbench.colorCustomizations` block to your `settings.json` and scope it to `[Codely Dark]` so the overrides only apply when the theme is active.
+
+```json settings.json
+{
+  "workbench.colorCustomizations": {
+    "[Codely Dark]": {
+      "editor.background": "#1d2021",
+      "activityBar.background": "#1d2021"
+    }
+  }
+}
+```
+
+<Tip>
+  A full list of every VS Code workbench color token — including surfaces not covered above such as diff editor, peek view, debug toolbar, and notebook cells — is available in the official VS Code Theme Color Reference at [https://code.visualstudio.com/api/references/theme-color](https://code.visualstudio.com/api/references/theme-color).
+</Tip>

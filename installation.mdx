@@ -1,0 +1,52 @@
+---
+title: "Install Codely Theme in Visual Studio Code"
+sidebarTitle: "Installation"
+description: "Install the Codely VS Code Theme from the Marketplace with one click, or manually by copying the extension into your VS Code extensions folder."
+---
+
+There are two ways to get Codely Theme running in your editor. The **Marketplace method** is recommended for most users — it takes under a minute and keeps the extension up to date automatically. If you prefer to work from source or install in an offline environment, the **manual method** gives you full control by placing the extension folder directly into your VS Code extensions directory.
+
+## Install from the Marketplace
+
+<Steps>
+  <Step title="Open the Extensions panel">
+    Press `Ctrl+Shift+X` on Windows/Linux or `Cmd+Shift+X` on macOS to open the Extensions panel in the Activity Bar.
+  </Step>
+  <Step title="Search for Codely Theme">
+    Type **Codely Theme** in the search box. Look for the result published by **Codely** to make sure you have the correct extension.
+  </Step>
+  <Step title="Click Install">
+    Click the **Install** button on the Codely Theme listing. VS Code will begin downloading the extension immediately.
+  </Step>
+  <Step title="Extension activates automatically">
+    Once the download completes, VS Code activates the extension. The "Codely Dark" theme variant is now available for selection in your color theme picker.
+  </Step>
+</Steps>
+
+<Tip>
+  After installation, activate the theme by opening the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`), running **Preferences: Color Theme**, and selecting **Codely Dark** from the list.
+</Tip>
+
+## Manual Installation
+
+Use this method to install from a cloned repository or an extracted `.vsix` package.
+
+<Steps>
+  <Step title="Locate your VS Code extensions folder">
+    Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and run **Extensions: Open Extensions Folder**. VS Code will open the folder in your system file manager. The default locations are:
+
+    - **Linux / macOS:** `~/.vscode/extensions`
+    - **Windows:** `%USERPROFILE%\.vscode\extensions`
+  </Step>
+  <Step title="Copy the extension into the folder">
+    Copy the cloned repository folder (e.g. `vscode-theme`) — or the directory extracted from a `.vsix` archive — into the extensions folder you opened in the previous step. The folder must contain the extension's `package.json` at its root.
+  </Step>
+  <Step title="Restart VS Code">
+    Fully close and reopen Visual Studio Code. VS Code scans the extensions folder on startup and will register Codely Theme automatically.
+  </Step>
+</Steps>
+
+## System Requirements
+
+- **Visual Studio Code `^1.51.0`** — November 2020 release or any later version.
+- **No additional dependencies** — Codely Theme is a pure color theme extension with no runtime requirements beyond VS Code itself.
